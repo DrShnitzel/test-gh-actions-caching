@@ -19,9 +19,12 @@ jobs:
       - name: Debug pwd
         run: pwd
 
+      - name: Debug ls
+        run: ls -la
+
       - name: Generate
         if: steps.cache-result.outputs.cache-hit != 'true'
-        run: /generate.sh
+        run: /home/runner/work/test-gh-actions-caching/test-gh-actions-caching/generate.sh
 
       - name: Use
-        run: /use.sh
+        run: /home/runner/work/test-gh-actions-caching/test-gh-actions-caching/use.sh
