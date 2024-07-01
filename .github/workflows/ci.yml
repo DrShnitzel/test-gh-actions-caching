@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Cache Primes
+      - name: Cache
         id: cache-result
         uses: actions/cache@v4
         with:
@@ -17,7 +17,7 @@ jobs:
           key: ${{ runner.os }}-cache
 
       - name: Generate
-        if: steps.cache-primes.outputs.cache-hit != 'true'
+        if: steps.cache-result.outputs.cache-hit != 'true'
         run: generate.sh
 
       - name: Use
