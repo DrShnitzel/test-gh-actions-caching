@@ -24,7 +24,7 @@ jobs:
 
       - name: Generate
         if: steps.cache-result.outputs.cache-hit != 'true'
-        run: /home/runner/work/test-gh-actions-caching/test-gh-actions-caching/generate.sh
+        run: ./generate.sh
 
       - name: Use
-        run: /home/runner/work/test-gh-actions-caching/test-gh-actions-caching/use.sh
+        run: ./use.sh
