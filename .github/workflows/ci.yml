@@ -16,9 +16,12 @@ jobs:
           path: /tmp/cache-result
           key: ${{ runner.os }}-cache
 
+      - name: Debug pwd
+        run: pwd
+
       - name: Generate
         if: steps.cache-result.outputs.cache-hit != 'true'
-        run: generate.sh
+        run: /generate.sh
 
       - name: Use
-        run: use.sh
+        run: /use.sh
